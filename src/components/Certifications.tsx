@@ -4,35 +4,40 @@ import { Award, Calendar, ExternalLink, CheckCircle } from 'lucide-react';
 const Certifications = () => {
   const certifications = [
     {
-      title:"Programming in Java",
+      title: "Programming in Java",
       issuer: "NPTEL (IIT/National Programme on Technology Enhanced Learning)",
       date: "Jan–Apr 2024",
       status: "Completed",
-      description: "12-week course covering core Java programming concepts including OOP, exception handling, collections, multithreading, and applet development.",
-      ExternelLink: "https://archive.nptel.ac.in/noc/B2C/candidate_login/candidate_scores.php?courseid=noc24-cs43"
+      description:
+        "12-week course covering core Java programming concepts including OOP, exception handling, collections, multithreading, and applet development.",
+      pdf: "/certificates/java_certificate.pdf",
     },
     {
       title: "AWS Academy Graduate - AWS Academy Cloud Operations",
       issuer: "AWS Academy",
       date: "March 19, 2025",
       status: "Completed",
-      description: "40-hour course focusing on AWS Cloud operations including monitoring, automation, incident response, and account management using AWS services."
+      description:
+        "40-hour course focusing on AWS Cloud operations including monitoring, automation, incident response, and account management using AWS services.",
+      pdf: "/certificates/aws_cloud_ops.pdf",
     },
     {
       title: "AWS Academy Graduate - AWS Academy Cloud Foundations",
       issuer: "AWS Academy",
       date: "March 16, 2025",
       status: "Completed",
-      description: "20-hour introductory course covering AWS core services, security, architecture, pricing, and support."
-      
+      description:
+        "20-hour introductory course covering AWS core services, security, architecture, pricing, and support.",
+      pdf: "/certificates/aws_foundations.pdf",
     },
     {
       title: "Mastering Generative AI and ChatGPT",
       issuer: "GeeksforGeeks",
       date: "2025",
       status: "Completed",
-      description: "5-week course focused on mastering Generative AI concepts and hands-on experience with ChatGPT."
-      
+      description:
+        "5-week course focused on mastering Generative AI concepts and hands-on experience with ChatGPT.",
+      pdf: "/certificates/generative_ai.pdf",
     },
   ];
 
@@ -48,7 +53,10 @@ const Certifications = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {certifications.map((cert, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+            >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="p-2 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg">
@@ -59,14 +67,14 @@ const Certifications = () => {
                     <p className="text-gray-600 font-medium">{cert.issuer}</p>
                   </div>
                 </div>
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
-                  cert.status === 'Completed' 
-                    ? 'bg-green-100 text-green-800' 
-                    : 'bg-yellow-100 text-yellow-800'
-                }`}>
-                  {cert.status === 'Completed' ? (
-                    <CheckCircle size={16} className="mr-1" />
-                  ) : null}
+                <span
+                  className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
+                    cert.status === 'Completed'
+                      ? 'bg-green-100 text-green-800'
+                      : 'bg-yellow-100 text-yellow-800'
+                  }`}
+                >
+                  {cert.status === 'Completed' && <CheckCircle size={16} className="mr-1" />}
                   {cert.status}
                 </span>
               </div>
@@ -80,10 +88,17 @@ const Certifications = () => {
                     <span>{cert.date}</span>
                   </div>
                 </div>
-                <button className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors">
-                  <span>View</span>
-                  <ExternalLink size={16} />
-                </button>
+                {cert.pdf && (
+                  <a
+                    href={cert.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center space-x-1 text-blue-600 hover:text-blue-800 transition-colors"
+                  >
+                    <span>View</span>
+                    <ExternalLink size={16} />
+                  </a>
+                )}
               </div>
             </div>
           ))}
