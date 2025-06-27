@@ -8,7 +8,8 @@ const Certifications = () => {
       issuer: "NPTEL (IIT/National Programme on Technology Enhanced Learning)",
       date: "Jan–Apr 2024",
       status: "Completed",
-      description: "12-week course covering core Java programming concepts including OOP, exception       handling, collections, multithreading, and applet development."
+      description: "12-week course covering core Java programming concepts including OOP, exception handling, collections, multithreading, and applet development.",
+      ExternelLink: "https://archive.nptel.ac.in/noc/B2C/candidate_login/candidate_scores.php?courseid=noc24-cs43"
     },
     {
       title: "AWS Academy Graduate - AWS Academy Cloud Operations",
