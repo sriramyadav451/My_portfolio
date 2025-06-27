@@ -10,7 +10,7 @@ const Certifications = () => {
       status: "Completed",
       description:
         "12-week course covering core Java programming concepts including OOP, exception handling, collections, multithreading, and applet development.",
-      pdf: "/certificates/java_certificate.pdf",
+      pdf: "/java_certificate.pdf",
     },
     {
       title: "AWS Academy Graduate - AWS Academy Cloud Operations",
@@ -19,7 +19,7 @@ const Certifications = () => {
       status: "Completed",
       description:
         "40-hour course focusing on AWS Cloud operations including monitoring, automation, incident response, and account management using AWS services.",
-      pdf: "/certificates/aws_cloud_ops.pdf",
+      pdf: "/aws_cloud_operations.pdf",
     },
     {
       title: "AWS Academy Graduate - AWS Academy Cloud Foundations",
@@ -28,7 +28,7 @@ const Certifications = () => {
       status: "Completed",
       description:
         "20-hour introductory course covering AWS core services, security, architecture, pricing, and support.",
-      pdf: "/certificates/aws_foundations.pdf",
+      pdf: "/aws_cloud_foundations.pdf",
     },
     {
       title: "Mastering Generative AI and ChatGPT",
@@ -37,7 +37,7 @@ const Certifications = () => {
       status: "Completed",
       description:
         "5-week course focused on mastering Generative AI concepts and hands-on experience with ChatGPT.",
-      pdf: "/certificates/generative_ai.pdf",
+      pdf: "/generative_ai.pdf",
     },
   ];
 
