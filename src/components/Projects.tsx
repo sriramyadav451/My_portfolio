@@ -4,25 +4,28 @@ import { ExternalLink, Github, Code, Brain, Database } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: "Resume screening using NLp",
+      title: "Resume Screening using NLP",
       description: "Built an AI-powered recommendation system using NLP and collaborative filtering to analyze user behavior and content. Delivered personalized suggestions by processing textual data with machine learning algorithms.",
       technologies: ["Python", "TensorFlow", "Pandas", "Flask", "React", "NLTK / spaCy"],
       icon: <Brain className="text-blue-500" size={24} />,
-      category: " Natural Language Processing",
+      category: "Natural Language Processing",
+      github: "https://github.com/sriramyadav451/Resume_screening_using_NLP.git",
     },
     {
       title: "Disease Prediction",
       description: "Developed a responsive web app using Streamlit to predict diseases (e.g., diabetes, heart disease, liver conditions) from symptoms, and recommend medications via ML models.",
-      technologies: ["Python", "Streamlit", "scikit-learn", "Pandas", "NumPy", "NLTK (for text processing)", "TF‑IDF", "Plotly/Matplotlib"],
+      technologies: ["Python", "Streamlit", "scikit-learn", "Pandas", "NumPy", "NLTK", "TF‑IDF", "Plotly/Matplotlib"],
       icon: <Database className="text-green-500" size={24} />,
       category: "Natural Language Processing",
+      github: "https://github.com/sriramyadav451/Disease_prediction.git",
     },
     {
       title: "Weather Application",
-      description: " Built a responsive weather app using vanilla JavaScript that fetches real-time weather data via a public API, allowing users to view current conditions, temperature, humidity, and a multi‑day forecast.",
-      technologies: ["HTML", "CSS", "JavaScript", "third‑party weather API" ],
+      description: "Built a responsive weather app using vanilla JavaScript that fetches real-time weather data via a public API, allowing users to view current conditions, temperature, humidity, and a multi‑day forecast.",
+      technologies: ["HTML", "CSS", "JavaScript", "Weather API"],
       icon: <Code className="text-purple-500" size={24} />,
       category: "Web Development",
+      github: "https://github.com/sriramyadav451/CODECRAFT_WD_05.git",
     },
   ];
 
@@ -38,7 +41,10 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center space-x-3">
@@ -48,18 +54,26 @@ const Projects = () => {
                     </span>
                   </div>
                   <div className="flex space-x-2">
-                    <button className="p-2 text-gray-400 hover:text-blue-600 transition-colors">
-                      <Github size={20} />
-                    </button>
-                    <button className="p-2 text-gray-400 hover:text-blue-600 transition-colors">
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 text-gray-400 hover:text-blue-600 transition-colors"
+                      >
+                        <Github size={20} />
+                      </a>
+                    )}
+                    {/* Add live link icon here if needed later */}
+                    {/* <a href="https://your-live-demo-link" target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={20} />
-                    </button>
+                    </a> */}
                   </div>
                 </div>
-                
+
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
                     <span
